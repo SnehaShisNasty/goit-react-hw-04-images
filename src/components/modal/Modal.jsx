@@ -5,7 +5,7 @@ import { Close, ModalCss, Overlay, ImgCss, Button } from './Modal.styled';
 
 const modalRoot = document.getElementById('modal-root');
 
-export const Modal = ({ modal, close }) => {
+const Modal = ({ modal, close }) => {
   const closeModal = ({ target, currentTarget, code }) => {
     if (target === currentTarget || code === 'Escape') {
       close();
@@ -29,3 +29,4 @@ export const Modal = ({ modal, close }) => {
     modalRoot
   );
 };
+export { Modal };
