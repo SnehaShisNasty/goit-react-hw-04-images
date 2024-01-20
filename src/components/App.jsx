@@ -67,6 +67,7 @@ const App = () => {
     });
   };
   const isImg = Boolean(list.length) && 12 * page < totalImg;
+
   return (
     <Main>
       <Searchbar onSubmit={handleSearch}></Searchbar>
