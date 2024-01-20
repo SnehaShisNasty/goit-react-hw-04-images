@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { createPortal } from 'react-dom';
 
 import { Close, ModalCss, Overlay, ImgCss, Button } from './Modal.styled';
@@ -11,7 +11,7 @@ const Modal = ({ modal, close }) => {
       close();
     }
   };
-  useEffect(() => {
+  useEffect(({ closeModal }) => {
     document.addEventListener('keydown', closeModal);
 
     return () => document.removeEventListener('keydown', closeModal);
