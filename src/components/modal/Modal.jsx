@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { createPortal } from 'react-dom';
 
 import { Close, ModalCss, Overlay, ImgCss, Button } from './Modal.styled';
@@ -30,4 +30,4 @@ const Modal = ({ modal, close }) => {
   );
 };
 
-export { Modal };
+export default Modal;

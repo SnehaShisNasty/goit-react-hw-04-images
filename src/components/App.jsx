@@ -17,7 +17,6 @@ const App = () => {
   const [loading, setLoading] = useState(false);
   const [list, setList] = useState([]);
   const [totalImg, setTotalImg] = useState(1);
-  const [error, setError] = useState(null);
   const [modal, setModal] = useState({
     isModal: false,
     modalImg: '',
@@ -34,7 +33,7 @@ const App = () => {
         );
         setTotalImg(data.total);
       } catch (error) {
-        setError(error.message);
+        console.log(error);
       } finally {
         setLoading(false);
       }
