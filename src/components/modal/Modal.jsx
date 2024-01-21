@@ -6,16 +6,17 @@ import { Close, ModalCss, Overlay, ImgCss, Button } from './Modal.styled';
 const modalRoot = document.getElementById('modal-root');
 
 const Modal = ({ modal, close }) => {
+  useEffect(() => {
+    document.addEventListener('keydown', closeModal);
+
+    return () => document.removeEventListener('keydown', closeModal);
+  }, []);
+
   const closeModal = ({ target, currentTarget, code }) => {
     if (target === currentTarget || code === 'Escape') {
       close();
     }
   };
-  useEffect(({ closeModal }) => {
-    document.addEventListener('keydown', closeModal);
-
-    return () => document.removeEventListener('keydown', closeModal);
-  }, []);
 
   return createPortal(
     <Overlay onClick={closeModal}>
