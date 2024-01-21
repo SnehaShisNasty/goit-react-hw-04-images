@@ -16,7 +16,7 @@ const Modal = ({ modal, close }) => {
     document.addEventListener('keydown', closeModal);
 
     return () => document.removeEventListener('keydown', closeModal);
-  }, [close]);
+  });
 
   return createPortal(
     <Overlay onClick={closeModal}>

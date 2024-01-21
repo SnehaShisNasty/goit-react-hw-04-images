@@ -46,6 +46,9 @@ const App = () => {
 
   const handleSearch = ({ search }) => {
     if (search !== '') {
+      setModal({
+        isModal: false,
+      });
       setSearch(search);
       setList([]);
       setPage(1);
